@@ -49,4 +49,38 @@ module.exports = {
       );
     });
   },
+
+  alter: (code, name, cost_price, sales_price) => {
+    return new Promise((accept, reject) => {
+      db.query(
+        "UPDATE products SET name = ?, cost_price =?, sales_price = ? WHERE code = ?",
+        [name, cost_price, sales_price, code],
+        (error, results) => {
+          if (error) {
+            reject(error);
+            return;
+          } else {
+            accept(results.insertCode);
+          }
+        }
+      );
+    });
+  },
+
+  alterPrice: (code, sales_price) => {
+    return new Promise((accept, reject) => {
+      db.query(
+        "UPDATE products SET sales_price = ? WHERE code = ?",
+        [sales_price, code],
+        (error, results) => {
+          if (error) {
+            reject(error);
+            return;
+          } else {
+            accept(results.insertCode);
+          }
+        }
+      );
+    });
+  },
 };
