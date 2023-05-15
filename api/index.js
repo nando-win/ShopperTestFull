@@ -4,10 +4,11 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 
 const routes = require("./src/routes");
-const server = express();
 
+const server = express();
 server.use(cors());
 server.use(bodyParser.urlencoded({ extended: false }));
+server.use("/api", routes);
 
 server.listen(process.env.PORT, () => {
   console.log(`Servidor rodando em localhost:${process.env.PORT}`);
