@@ -16,3 +16,8 @@
     - Para iniciar o serviço do frontend em react
   
       - Acessar o diretório **front**, iniciar terminal na pasta e rodar o comando "npm start"
+
+# Ambiente
+  Back-end: http://localhost:3000
+
+  Front-end: http://localhost:4200
